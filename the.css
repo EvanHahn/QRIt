@@ -7,12 +7,14 @@ html, body {
 
 html {
 	display: table;
+	*behavior: url("displaytable-polyfill.htc");
 }
 
 body {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
+	-dt-display: table-cell;
 }
 
 #qr canvas, #qr img {
