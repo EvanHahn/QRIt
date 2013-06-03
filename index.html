@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<!-- Lovingly made by Evan Hahn. -->
+
+<html>
+<head>
+
+<link rel=stylesheet href=the.css>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<title>QR It</title>
+<meta name=viewport content="width=device-width">
+
+</head>
+<body>
+
+<noscript>Sorry, but you'll need JavaScript for this.</noscript>
+
+<div id=qr></div>
+
+<script src=qrcode.js></script>
+<script>addEventListener || document.write("<script src=addeventlistener-polyfill.js><\/script>")</script>
+<script>
+var size = 400;
+new QRCode("qr", {
+	text: "barack obama",
+	width: size,
+	height: size
+});
+</script>
+
+</body>
+</html>
