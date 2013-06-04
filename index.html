@@ -17,15 +17,34 @@
 
 <div id=qr></div>
 
+<input type=text id=code>
+
 <script src=qrcode.js></script>
 <script>addEventListener || document.write("<script src=addeventlistener-polyfill.js><\/script>")</script>
 <script>
+
+var code = location.search.substr(1);
+
 var size = 400;
-new QRCode("qr", {
-	text: "barack obama",
+var qrCode = new QRCode("qr", {
+	text: code || "http://www.evanhahn.com",
 	width: size,
 	height: size
 });
+
+var input = document.getElementById("code");
+
+input.focus();
+
+input.value = code;
+
+var oldValue = input.value;
+input.addEventListener("keyup", function() {
+	if (this.value !== oldValue)
+		qrCode.makeCode(this.value);
+	oldValue = this.value;
+});
+
 </script>
 
 </body>
