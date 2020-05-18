@@ -1,3 +1,0 @@
-//addEventListener polyfill 1.0 / Eirik Backer / MIT Licence
-(function(c,b){function e(a){var f=b[a];b[a]=function(a){return d(f(a))}}function g(a,f,b){return(b=this).attachEvent("on"+a,function(a){a=a||c.event;a.preventDefault=a.preventDefault||function(){a.returnValue=!1};a.stopPropagation=a.stopPropagation||function(){a.cancelBubble=!0};f.call(b,a)})}function d(a,b){if(b=a.length)for(;b--;)a[b].addEventListener=g;else a.addEventListener=g;return a}c.addEventListener||(d([b,c]),"Element"in c?c.Element.prototype.addEventListener=g:(b.attachEvent("onreadystatechange",
-function(){d(b.all)}),e("getElementsByTagName"),e("getElementById"),e("createElement"),d(b.all)))})(window,document);
